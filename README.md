@@ -1,5 +1,7 @@
 # BRAR Multimodal
 
+[![DOI](https://zenodo.org/badge/1420020573.svg)](https://doi.org/10.5281/zenodo.23405144)
+
 Deep learning classification of periodontal bone resorption severity from panoramic
 radiographs, combining image features with routinely available clinical metadata.
 
@@ -278,6 +280,8 @@ requirements.txt
 
 ## Citation
 
+Please cite the article:
+
 ```bibtex
 @article{salman2026brar,
   title   = {Multimodal deep learning for automated assessment of periodontal
@@ -289,6 +293,21 @@ requirements.txt
   doi     = {10.1186/s12880-026-02928-6}
 }
 ```
+
+To cite this software archive specifically:
+
+```bibtex
+@software{salman2026brar_code,
+  title     = {BRAR Multimodal: code and data for multimodal periodontal bone
+               resorption severity classification},
+  author    = {Salman, Adnan and Bishtawi, Ibtehal Raghib},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23405144}
+}
+```
+
+The DOI above resolves to the latest release; each version also has its own DOI.
 
 ## License
 
