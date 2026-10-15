@@ -3,7 +3,6 @@ import numpy as np
 import torch
 from sklearn.model_selection import train_test_split
 
-
 def set_seed(seed):
     random.seed(seed)
     np.random.seed(seed)
@@ -11,7 +10,6 @@ def set_seed(seed):
     torch.cuda.manual_seed_all(seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
-
 
 def split_data(df, config):
     train_df, test_df = train_test_split(

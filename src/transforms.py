@@ -1,6 +1,4 @@
 from torchvision import transforms
-import torchvision.transforms.functional as TF
-
 
 def get_transforms(config, train=True):
     version = config.get('transform_version', 'default')

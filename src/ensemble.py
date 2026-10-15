@@ -18,11 +18,9 @@ import seaborn as sns
 
 from src.config import RUNS_DIR
 from model import build_model
-from dataset import build_datasets, BRARDataset
+from dataset import build_datasets
 from utils import set_seed, split_data
 from dataset import load_metadata
-from evaluate import plot_roc_auc, plot_precision_recall
-
 
 def load_model_from_run(run_dir, seed, config):
     """Load a saved model from a run directory for a specific seed."""
@@ -33,7 +31,6 @@ def load_model_from_run(run_dir, seed, config):
     model.load_state_dict(torch.load(model_path, map_location='cpu'))
     model.eval()
     return model
-
 
 def get_probs(model, test_loader, device):
     """Get softmax probabilities from a single model."""
@@ -48,7 +45,6 @@ def get_probs(model, test_loader, device):
             all_probs.append(probs.cpu().numpy())
             all_labels.extend(labels.numpy())
     return np.concatenate(all_probs, axis=0), np.array(all_labels)
-
 
 def run_ensemble(run_dirs, weights=None, seeds=None, save_dir=None):
     """

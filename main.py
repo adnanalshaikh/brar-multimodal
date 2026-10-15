@@ -32,8 +32,6 @@ import re
 import copy
 import json
 import shutil
-from src.config import DATA_DIR
-
 
 # ── Run IDs ───────────────────────────────────────────────────────────────────
 IMAGE_ONLY_ID  = 'image_only_dens'
@@ -218,17 +216,6 @@ def section_6_gradcam():
     )
 
 # ─────────────────────────────────────────────────────────────────────────────
-def section_7_inter_annotator1():
-    multimodal_config = {**config,
-                         'fusion_mode': 'multimodal',
-                         'seed':        2024}
-    dentist_csv = DATA_DIR / 'dentist_eval_summary.csv'
-    comparison, results = run_dentist_experiment(
-        dentist_csv = dentist_csv,
-        config      = multimodal_config,
-        save_dir    = DENTIST_RUN
-    )
-
 def section_7_inter_annotator():
     """
     Inter-annotator agreement against independent dentist grading.
@@ -641,20 +628,20 @@ if __name__ == "__main__":
     print()
 
     steps = [
-        #("Baseline and ablation experiments",    section_1_baseline_and_ablation),
-        #("Training base models on tuning seeds", section_2_ensemble_weight_runs),
-        #("Finding optimal ensemble weights",     section_3_ensemble_weight_tuning),
-        #("Ensemble analysis",                    section_4_ensemble),
-        #("Statistical comparison",               section_5_statistical_comparison),
-        #("GradCAM visualizations",                section_6_gradcam),
+        ("Baseline and ablation experiments",    section_1_baseline_and_ablation),
+        ("Training base models on tuning seeds", section_2_ensemble_weight_runs),
+        ("Finding optimal ensemble weights",     section_3_ensemble_weight_tuning),
+        ("Ensemble analysis",                    section_4_ensemble),
+        ("Statistical comparison",               section_5_statistical_comparison),
+        ("GradCAM visualizations",                section_6_gradcam),
         ("Inter-annotator evaluation",           section_7_inter_annotator),
-        #("Sensitivity analysis (no age)",        section_8_sensitivity_no_age),
-        #("Full vs no-age comparison",            section_9_sensitivity_comparison),
-        #("Late fusion"              ,            section_10_late_fusion),
-        #("Sensitivity analysis (only age)",      section_11_sensitivity_only_age),
-        #("Full vs only age comparison",          section_12_sensitivity_only_age_comparison),
-        #("Confidence intervals",                 mean_ci_metrics),
-        #("Grade error analysis (MAGE)",          grade_error_analysis),
+        ("Sensitivity analysis (no age)",        section_8_sensitivity_no_age),
+        ("Full vs no-age comparison",            section_9_sensitivity_comparison),
+        ("Late fusion"              ,            section_10_late_fusion),
+        ("Sensitivity analysis (only age)",      section_11_sensitivity_only_age),
+        ("Full vs only age comparison",          section_12_sensitivity_only_age_comparison),
+        ("Confidence intervals",                 mean_ci_metrics),
+        ("Grade error analysis (MAGE)",          grade_error_analysis),
     ]
 
     print("=" * 60) 

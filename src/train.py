@@ -4,8 +4,6 @@ import copy
 import numpy as np
 from sklearn.utils.class_weight import compute_class_weight
 
-
-
 def freeze_backbone(model):
     """Freeze all image-backbone parameters."""
     for param in model.image_branch.parameters():
