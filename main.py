@@ -629,20 +629,20 @@ if __name__ == "__main__":
     print()
 
     steps = [
-        #("Baseline and ablation experiments",    section_1_baseline_and_ablation),
-        #("Training base models on tuning seeds", section_2_ensemble_weight_runs),
-        #("Finding optimal ensemble weights",     section_3_ensemble_weight_tuning),
-        #("Ensemble analysis",                    section_4_ensemble),
-        #("Statistical comparison",               section_5_statistical_comparison),
-        #("GradCAM visualizations",                section_6_gradcam),
-        #("Inter-annotator evaluation",           section_7_inter_annotator),
-        #("Sensitivity analysis (no age)",        section_8_sensitivity_no_age),
-        #("Full vs no-age comparison",            section_9_sensitivity_comparison),
-        #("Late fusion"              ,            section_10_late_fusion),
-        #("Sensitivity analysis (only age)",      section_11_sensitivity_only_age),
+        ("Baseline and ablation experiments",    section_1_baseline_and_ablation),
+        ("Training base models on tuning seeds", section_2_ensemble_weight_runs),
+        ("Finding optimal ensemble weights",     section_3_ensemble_weight_tuning),
+        ("Ensemble analysis",                    section_4_ensemble),
+        ("Statistical comparison",               section_5_statistical_comparison),
+        ("GradCAM visualizations",                section_6_gradcam),
+        ("Inter-annotator evaluation",           section_7_inter_annotator),
+        ("Sensitivity analysis (no age)",        section_8_sensitivity_no_age),
+        ("Full vs no-age comparison",            section_9_sensitivity_comparison),
+        ("Late fusion"              ,            section_10_late_fusion),
+        ("Sensitivity analysis (only age)",      section_11_sensitivity_only_age),
         ("Full vs only age comparison",          section_12_sensitivity_only_age_comparison),
         ("Confidence intervals",                 mean_ci_metrics),
-        #("Grade error analysis (MAGE)",          grade_error_analysis),
+        ("Grade error analysis (MAGE)",          grade_error_analysis),
     ]
 
     print("=" * 60) 
