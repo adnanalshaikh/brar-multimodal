@@ -370,7 +370,7 @@ def section_12_sensitivity_only_age_comparison():
     mean_ci_metrics(runs={'image_only': IMAGE_ONLY_RUN,
                           'multimodal_age_only': MULTIMODAL_AGE_RUN,
                           'multimodal_no_age': NO_AGE_RUN,
-                          'multimodal_full': MULTIMODAL_RUN})
+                          'multimodal_full': MULTIMODAL_RUN}, name='mean_ci_ablation')
     
 # ─────────────────────────────────────────────────────────────────────────────
 def grade_error_analysis(runs=None, metrics_ci=True):
@@ -462,7 +462,7 @@ def grade_error_analysis(runs=None, metrics_ci=True):
 
 # ─────────────────────────────────────────────────────────────────────────────
 def mean_ci_metrics(runs=None, metrics=('accuracy', 'macro_f1', 'macro_auc',
-                                        'l3_recall')):
+                                        'l3_recall'), name='mean_ci'):
     """
     Mean with 95% CI across seeds for each model, for the results table.
     Always writes to runs/statistical_analysis/.
@@ -517,9 +517,10 @@ def mean_ci_metrics(runs=None, metrics=('accuracy', 'macro_f1', 'macro_auc',
     print("Mean [95% CI] across seeds")
     print(f"{'='*80}")
     print(wide.to_string())
+    
+    long_path = stats_dir / f'{name}.csv'
+    wide_path = stats_dir / f'{name}_wide.csv'
 
-    long_path = stats_dir / 'mean_ci.csv'
-    wide_path = stats_dir / 'mean_ci_wide.csv'
     summary_df.to_csv(long_path, index=False)
     wide.to_csv(wide_path)
     print(f"\nSaved → {long_path}")
@@ -628,20 +629,20 @@ if __name__ == "__main__":
     print()
 
     steps = [
-        ("Baseline and ablation experiments",    section_1_baseline_and_ablation),
-        ("Training base models on tuning seeds", section_2_ensemble_weight_runs),
-        ("Finding optimal ensemble weights",     section_3_ensemble_weight_tuning),
-        ("Ensemble analysis",                    section_4_ensemble),
-        ("Statistical comparison",               section_5_statistical_comparison),
-        ("GradCAM visualizations",                section_6_gradcam),
-        ("Inter-annotator evaluation",           section_7_inter_annotator),
-        ("Sensitivity analysis (no age)",        section_8_sensitivity_no_age),
-        ("Full vs no-age comparison",            section_9_sensitivity_comparison),
-        ("Late fusion"              ,            section_10_late_fusion),
-        ("Sensitivity analysis (only age)",      section_11_sensitivity_only_age),
+        #("Baseline and ablation experiments",    section_1_baseline_and_ablation),
+        #("Training base models on tuning seeds", section_2_ensemble_weight_runs),
+        #("Finding optimal ensemble weights",     section_3_ensemble_weight_tuning),
+        #("Ensemble analysis",                    section_4_ensemble),
+        #("Statistical comparison",               section_5_statistical_comparison),
+        #("GradCAM visualizations",                section_6_gradcam),
+        #("Inter-annotator evaluation",           section_7_inter_annotator),
+        #("Sensitivity analysis (no age)",        section_8_sensitivity_no_age),
+        #("Full vs no-age comparison",            section_9_sensitivity_comparison),
+        #("Late fusion"              ,            section_10_late_fusion),
+        #("Sensitivity analysis (only age)",      section_11_sensitivity_only_age),
         ("Full vs only age comparison",          section_12_sensitivity_only_age_comparison),
         ("Confidence intervals",                 mean_ci_metrics),
-        ("Grade error analysis (MAGE)",          grade_error_analysis),
+        #("Grade error analysis (MAGE)",          grade_error_analysis),
     ]
 
     print("=" * 60) 

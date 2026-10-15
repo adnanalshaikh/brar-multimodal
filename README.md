@@ -48,7 +48,17 @@ Class distribution: Level 1 = 170, Level 2 = 560, Level 3 = 258.
 Each seed produces a stratified 70/15/15 partition: 691 training, 148 validation and
 149 test images (26 / 84 / 39 per level in the test partition).
 
-**Data availability:** see the Data Availability statement of the published article.
+**Data availability:** the radiographs are derived from the BRAR-anchored
+multimodal dataset (Xia Y, Li Z, Lin Z, Wang S, Wang Y, Xie Y. *BRAR-anchored
+multimodal dataset*. figshare, 2025.
+[doi:10.6084/m9.figshare.30155974](https://doi.org/10.6084/m9.figshare.30155974)),
+released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+The images in this repository are **modified**: manually cropped to the
+dental-arch region of interest as described in the Methods, and restricted to
+the 988 cases with complete metadata (the source deposit covers 1,104
+patients). `meta_data.csv` is derived from the same deposit. Original data
+© the dataset authors, reused and adapted under CC BY 4.0.
 
 Expected layout:
 
@@ -282,10 +292,15 @@ requirements.txt
 
 ## License
 
-The article is published open access under
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+**Code** — MIT License, see [LICENSE](LICENSE).
 
-The code in this repository is released under the MIT License — see [LICENSE](LICENSE).
+**Data** (`data/`) — the cropped radiographs and `meta_data.csv` are adapted from
+the BRAR-anchored multimodal dataset, © Xia et al., used and redistributed under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). See *Data
+availability* above and `data/README.md`.
+
+**Article** — published open access under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 ## Contact
 
