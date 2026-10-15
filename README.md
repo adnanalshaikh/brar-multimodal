@@ -55,10 +55,10 @@ multimodal dataset*. figshare, 2025.
 released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 The images in this repository are **modified**: manually cropped to the
-dental-arch region of interest as described in the Methods, and restricted to
-the 988 cases with complete metadata (the source deposit covers 1,104
-patients). `meta_data.csv` is derived from the same deposit. Original data
-© the dataset authors, reused and adapted under CC BY 4.0.
+dental-arch region of interest as described in the Methods. All 988 radiographs
+available in the deposit are included, although the deposit's description refers
+to 1,104 patients. `meta_data.csv` is derived from the same deposit. Original
+data © the dataset authors, reused and adapted under CC BY 4.0.
 
 Expected layout:
 

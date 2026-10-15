@@ -16,8 +16,9 @@ The material here has been **modified** from the original deposit:
 
 - Images were manually cropped to the dental-arch region of interest, as
   described in the Methods section of the accompanying article.
-- The set is restricted to the 988 cases with complete metadata; the source
-  deposit covers 1,104 patients.
+- All 988 radiographs available in the deposit are included. The deposit's
+  description refers to 1,104 patients; 988 is the number of images it actually
+  contains.
 - `meta_data.csv` was constructed from the deposit's annotations, retaining the
   severity level and the six metadata fields used by the models.
 
